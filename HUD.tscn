@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://PressStart2P.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Stats" type="VBoxContainer" parent="."]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 352.0
+margin_bottom = 74.0
+
+[node name="Progress" type="Label" parent="Stats"]
+margin_right = 328.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 0, 36 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Progress 0/0"
+valign = 1
+
+[node name="Restart" type="Label" parent="Stats"]
+margin_top = 40.0
+margin_right = 328.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 0, 36 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "[R] Restart"
+valign = 1
+
+[node name="Esc" type="Label" parent="Stats"]
+margin_top = 80.0
+margin_right = 328.0
+margin_bottom = 116.0
+rect_min_size = Vector2( 0, 36 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "[Esc] Exit"
+valign = 1
