@@ -3,7 +3,23 @@
 [ext_resource path="res://GameManager.tres" type="Theme" id=1]
 [ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://TitleScreen.gd" type="Script" id=3]
-[ext_resource path="res://Sprites.png" type="Texture" id=4]
+[ext_resource path="res://Textures/Sprites.png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 256, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 320, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 288, 128, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 352, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )
@@ -21,24 +37,18 @@ region = Rect2( 256, 160, 32, 32 )
 atlas = ExtResource( 4 )
 region = Rect2( 320, 160, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 4 )
-region = Rect2( 288, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 4 )
-region = Rect2( 352, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 4 )
-region = Rect2( 256, 128, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 4 )
-region = Rect2( 320, 128, 32, 32 )
-
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "left_top",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "right_top",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": true,
 "name": "right_bottom",
@@ -47,16 +57,6 @@ animations = [ {
 "frames": [ SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "left_bottom",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 3 ), SubResource( 4 ) ],
-"loop": true,
-"name": "right_top",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 5 ), SubResource( 6 ) ],
-"loop": true,
-"name": "left_top",
 "speed": 5.0
 } ]
 
@@ -74,7 +74,7 @@ margin_right = 120.0
 margin_bottom = 12.0
 theme = ExtResource( 1 )
 custom_fonts/font = ExtResource( 2 )
-text = "GAME TITLE"
+text = "DICE OUT"
 align = 1
 valign = 1
 
@@ -97,7 +97,6 @@ position = Vector2( 432, 483 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 9 )
 animation = "left_top"
-frame = 1
 playing = true
 
 [node name="right_top" type="AnimatedSprite" parent="."]
@@ -105,7 +104,6 @@ position = Vector2( 587, 483 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 9 )
 animation = "left_top"
-frame = 1
 playing = true
 flip_h = true
 
@@ -114,7 +112,6 @@ position = Vector2( 587, 537 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 9 )
 animation = "left_top"
-frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -124,6 +121,5 @@ position = Vector2( 432, 536 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 9 )
 animation = "left_top"
-frame = 1
 playing = true
 flip_v = true

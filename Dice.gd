@@ -8,6 +8,8 @@ var dice_down
 var dice_opposite
 var speed
 var start_pos
+var cooldown = 0.17
+var time_left
 onready var map = get_parent().get_node("Floor")
 onready var tileset = map.tile_set
 onready var smoke = load("res://Smoke.tscn")
@@ -37,6 +39,7 @@ func init():
   dice_down = 4
   dice_opposite = 6
   speed = Vector2.ZERO  
+  time_left = 0
   position = start_pos
   score = 0
   stats.visible = true
@@ -54,6 +57,10 @@ func _ready():
   init()
 
 func _process(delta):
+  if time_left > 0:
+    time_left -= delta
+    return
+  
   if Input.is_action_just_released("restart_level"):
     for name in ["one", "two", "three", "four", "five", "six"]:
       var full_id = tileset.find_tile_by_name(name + "_full")
@@ -136,6 +143,7 @@ func _on_animation_finished():
   frame = dice - 1
   position += speed * 0.5
   speed = Vector2.ZERO
+  time_left = cooldown
   
   var map_pos = map.world_to_map(position)
   var cell = map.get_cellv(map_pos)    

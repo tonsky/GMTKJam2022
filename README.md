@@ -1,5 +1,5 @@
 # Dice Out — GMTK Jam 2022 Submission
 
-Help Gnargle get the dice out!
+Help Gnargle get the DICE OUT!
 
-![](Screenshots/2022-07-16.png)
+![](Screenshots/screenshot.png)

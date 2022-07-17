@@ -2,7 +2,7 @@
 
 [ext_resource path="res://PressStart2P.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GameManager.tres" type="Theme" id=2]
-[ext_resource path="res://Sprites.png" type="Texture" id=3]
+[ext_resource path="res://Textures/Sprites.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
