@@ -22,6 +22,8 @@ var congrats
 var goal = 0
 var score = 0
 
+signal moved
+
 func update_hud():
   progress.text = "Progress %s/%s" % [score, goal]
   if score >= goal:
@@ -52,6 +54,7 @@ func init():
   update_hud()
 
 func _ready():
+  connect("moved", get_parent().find_node("Cam"), "_on_Dice_moved")
   for name in ["one", "two", "three", "four", "five", "six"]:
     var id = tileset.find_tile_by_name(name)
     goal += len(map.get_used_cells_by_id(id))
@@ -139,6 +142,8 @@ func _process(delta):
         $RollSound.play()
 
 func _on_animation_finished():
+  emit_signal("moved")
+  
   stop()  
   animation = "faces"
   frame = dice - 1

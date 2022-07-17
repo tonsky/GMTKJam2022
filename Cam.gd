@@ -5,10 +5,14 @@ onready var map = get_parent().get_node("Floor")
 var center
 var size
 var factor
+var shaked = false
 
 func update():
   var delta = (center - dice.position) / max(size.x, size.y)
-  position = center - Vector2(delta.x * 32, delta.y * 0) - Vector2(0, 100 * factor)
+  var down = 0
+  if shaked:
+    down = 8 * factor
+  position = center - Vector2(delta.x * 32, down) - Vector2(0, 100 * factor)
 
 func _ready():
   var bounds = map.get_used_rect()
@@ -23,3 +27,10 @@ func _process(_delta):
   if not smoothing_enabled:
     smoothing_enabled = true
   update()  
+
+func _on_Dice_moved():
+  shaked = true
+  $ShakeTimer.start(0.1)
+
+func _on_ShakeTimer_timeout():
+  shaked = false
