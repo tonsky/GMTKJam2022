@@ -168,9 +168,6 @@ func _on_animation_finished():
   elif dice == 6 and cell_name == "six":
     map.set_cellv(map_pos, tileset.find_tile_by_name('six_full'))
     matched = true
-  elif ["one", "two", "three", "four", "five", "six"].has(cell_name):
-    # $MissSound.play()
-    pass
     
   if matched:
     score += 1
@@ -179,4 +176,7 @@ func _on_animation_finished():
     get_parent().add_child(m)
     m.position = position
     m.play()
-    $MatchSound.play()
+    if score < goal:
+      $MatchSound.play()
+    else:
+      $WinSound.play()
