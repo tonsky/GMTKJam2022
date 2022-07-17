@@ -3,7 +3,7 @@
 [ext_resource path="res://Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Dice.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Cam.tscn" type="PackedScene" id=3]
-[ext_resource path="res://tiles.tres" type="TileSet" id=4]
+[ext_resource path="res://tiles_x4.tres" type="TileSet" id=4]
 [ext_resource path="res://dice_roll.tres" type="SpriteFrames" id=5]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=6]
 
@@ -13,13 +13,12 @@
 
 [node name="Floor" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
-cell_size = Vector2( 32, 32 )
+cell_size = Vector2( 128, 128 )
 format = 1
-tile_data = PoolIntArray( 327681, 0, 0, 327682, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 2, 0, 393220, 6, 0, 393221, 5, 0, 393222, 1, 0, 393223, 2, 0, 393224, 5, 0, 458753, 0, 0, 458754, 0, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 2, 0, 65539, 6, 0, 65540, 5, 0, 65541, 1, 0, 65542, 2, 0, 65543, 5, 0, 131072, 0, 0, 131073, 0, 0 )
 
 [node name="Dice" parent="." instance=ExtResource( 2 )]
-position = Vector2( 80, 208 )
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( 192, 192 )
 frames = ExtResource( 5 )
 
 [node name="Cam" parent="." instance=ExtResource( 3 )]

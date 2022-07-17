@@ -47,7 +47,6 @@ animations = [ {
 } ]
 
 [node name="Match" type="AnimatedSprite"]
-scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 44 )
 script = ExtResource( 1 )
 

@@ -83,13 +83,13 @@ func _process(delta):
     
   elif score < goal and not playing:
     if Input.is_action_pressed("move_right"):
-      speed.x = 32
+      speed.x = core.tile_size
     elif Input.is_action_pressed("move_left"):
-      speed.x = -32
+      speed.x = -core.tile_size
     elif Input.is_action_pressed("move_down"):
-      speed.y = 32
+      speed.y = core.tile_size
     elif Input.is_action_pressed("move_up"):
-      speed.y = -32
+      speed.y = -core.tile_size
     else:
       speed = Vector2.ZERO
       

@@ -1,38 +1,44 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Smoke.gd" type="Script" id=1]
-[ext_resource path="res://Textures/Sprites.png" type="Texture" id=2]
+[ext_resource path="res://Textures/smoke.png" type="Texture" id=2]
 
-[sub_resource type="AtlasTexture" id=39]
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 224, 64, 32, 32 )
+region = Rect2( 0, 0, 256, 256 )
 
-[sub_resource type="AtlasTexture" id=40]
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 256, 64, 32, 32 )
+region = Rect2( 256, 0, 256, 256 )
 
-[sub_resource type="AtlasTexture" id=41]
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 288, 64, 32, 32 )
+region = Rect2( 512, 0, 256, 256 )
 
-[sub_resource type="AtlasTexture" id=42]
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 320, 64, 32, 32 )
+region = Rect2( 768, 0, 256, 256 )
 
-[sub_resource type="AtlasTexture" id=43]
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 352, 64, 32, 32 )
+region = Rect2( 1024, 0, 256, 256 )
 
-[sub_resource type="SpriteFrames" id=44]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ null, null, null, SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
+"frames": [ null, null, null, SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": false,
 "name": "default",
 "speed": 20.0
 } ]
 
 [node name="Smoke" type="AnimatedSprite"]
-frames = SubResource( 44 )
+frames = SubResource( 8 )
+frame = 1
 script = ExtResource( 1 )
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
