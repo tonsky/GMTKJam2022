@@ -13,9 +13,11 @@ var time_left
 onready var map = get_parent().get_node("Floor")
 onready var tileset = map.tile_set
 onready var smoke = load("res://Smoke.tscn")
+onready var match_sprite = load("res://Match.tscn")
 onready var progress = get_parent().find_node("Progress")
 onready var stats = get_parent().find_node("Stats")
 onready var core = get_node("/root/Core")
+onready var roll_sound = get_node("RollSound")
 var congrats
 var goal = 0
 var score = 0
@@ -129,16 +131,15 @@ func _process(delta):
         var s = smoke.instance()
         get_parent().add_child(s)
         s.position = position
-        s.visible = true
-        s.frame = 0
         s.play()
         
         position += speed * 0.5
         frame = 0
         play()
+        $RollSound.play()
 
 func _on_animation_finished():
-  stop()
+  stop()  
   animation = "faces"
   frame = dice - 1
   position += speed * 0.5
@@ -148,27 +149,34 @@ func _on_animation_finished():
   var map_pos = map.world_to_map(position)
   var cell = map.get_cellv(map_pos)    
   var cell_name = tileset.tile_get_name(cell)
+  var matched = false
   if dice == 1 and cell_name == "one":
     map.set_cellv(map_pos, tileset.find_tile_by_name('one_full'))
-    score += 1
-    update_hud()
+    matched = true
   elif dice == 2 and cell_name == "two":
     map.set_cellv(map_pos, tileset.find_tile_by_name('two_full'))
-    score += 1
-    update_hud()
+    matched = true
   elif dice == 3 and cell_name == "three":
     map.set_cellv(map_pos, tileset.find_tile_by_name('three_full'))
-    score += 1
-    update_hud()
+    matched = true
   elif dice == 4 and cell_name == "four":
     map.set_cellv(map_pos, tileset.find_tile_by_name('four_full'))
-    score += 1
-    update_hud()
+    matched = true
   elif dice == 5 and cell_name == "five":
     map.set_cellv(map_pos, tileset.find_tile_by_name('five_full'))
-    score += 1
-    update_hud()
+    matched = true
   elif dice == 6 and cell_name == "six":
     map.set_cellv(map_pos, tileset.find_tile_by_name('six_full'))
+    matched = true
+  elif ["one", "two", "three", "four", "five", "six"].has(cell_name):
+    # $MissSound.play()
+    pass
+    
+  if matched:
     score += 1
     update_hud()
+    var m = match_sprite.instance()
+    get_parent().add_child(m)
+    m.position = position
+    m.play()
+    $MatchSound.play()

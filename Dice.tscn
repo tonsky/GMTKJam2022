@@ -1,35 +1,33 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Textures/Sprites.png" type="Texture" id=1]
 [ext_resource path="res://Dice.gd" type="Script" id=2]
+[ext_resource path="res://Audio/roll.wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/match.wav" type="AudioStream" id=4]
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 192, 192, 32, 64 )
+region = Rect2( 32, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 160, 192, 32, 64 )
+region = Rect2( 64, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 128, 192, 32, 64 )
+region = Rect2( 96, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 224, 128, 32, 64 )
+region = Rect2( 128, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 192, 128, 32, 64 )
+region = Rect2( 160, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
-region = Rect2( 160, 128, 32, 64 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 1 )
-region = Rect2( 128, 128, 32, 64 )
+region = Rect2( 192, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 1 )
@@ -87,36 +85,40 @@ region = Rect2( 0, 160, 64, 32 )
 atlas = ExtResource( 1 )
 region = Rect2( 0, 128, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 64, 32, 32 )
+region = Rect2( 192, 192, 32, 64 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 64, 32, 32 )
+region = Rect2( 160, 192, 32, 64 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 64, 32, 32 )
+region = Rect2( 128, 192, 32, 64 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 1 )
-region = Rect2( 128, 64, 32, 32 )
+region = Rect2( 224, 128, 32, 64 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 1 )
-region = Rect2( 160, 64, 32, 32 )
+region = Rect2( 192, 128, 32, 64 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 1 )
-region = Rect2( 192, 64, 32, 32 )
+region = Rect2( 160, 128, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 128, 32, 64 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
-"loop": true,
-"name": "roll_down",
-"speed": 40.0
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"loop": false,
+"name": "faces",
+"speed": 5.0
 }, {
 "frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
@@ -128,15 +130,15 @@ animations = [ {
 "name": "roll_left",
 "speed": 40.0
 }, {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": true,
+"name": "roll_down",
+"speed": 40.0
+}, {
 "frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
 "loop": false,
 "name": "roll_right",
 "speed": 40.0
-}, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
-"loop": false,
-"name": "faces",
-"speed": 5.0
 } ]
 
 [node name="Dice" type="AnimatedSprite"]
@@ -144,5 +146,11 @@ position = Vector2( 80, 432 )
 frames = SubResource( 11 )
 animation = "faces"
 script = ExtResource( 2 )
+
+[node name="RollSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="MatchSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

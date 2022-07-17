@@ -12,7 +12,6 @@ config_version=4
 
 config/name="GMTKJam2022"
 run/main_scene="res://Intro.tscn"
-boot_splash/bg_color=Color( 0.0313726, 0.4, 0.596078, 1 )
 config/icon="res://icon.png"
 
 [autoload]

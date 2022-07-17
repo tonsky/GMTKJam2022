@@ -32,8 +32,7 @@ animations = [ {
 } ]
 
 [node name="Smoke" type="AnimatedSprite"]
-visible = false
 frames = SubResource( 44 )
 script = ExtResource( 1 )
 
-[connection signal="animation_finished" from="." to="." method="_on_Smoke_animation_finished"]
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
