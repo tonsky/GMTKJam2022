@@ -199,7 +199,7 @@
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 4, 0 )
+tile_data = PoolIntArray( 327680, 1, 0, 327681, 0, 0, 327682, 1, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 458752, 1, 0, 458753, 0, 0, 458754, 1, 0 )
 
 [node name="Dice" parent="." instance=ExtResource( 2 )]
 position = Vector2( 48, 208 )

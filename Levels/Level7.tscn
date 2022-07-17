@@ -199,7 +199,7 @@
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 393216, 0, 0, 393217, 6, 0, 393218, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0 )
+tile_data = PoolIntArray( 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 393217, 0, 0, 393218, 1, 0, 393219, 2, 0, 393220, 3, 0, 393221, 4, 0, 393222, 5, 0, 393223, 6, 0, 393224, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0 )
 
 [node name="Dice" parent="." instance=ExtResource( 2 )]
 position = Vector2( 48, 208 )
@@ -210,5 +210,7 @@ frames = ExtResource( 5 )
 position = Vector2( 128, 208 )
 zoom = Vector2( 1, 1 )
 smoothing_enabled = true
+smoothing_speed = 10.0
+editor_draw_screen = false
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]

@@ -8,7 +8,7 @@ var dice_down
 var dice_opposite
 var speed
 var start_pos
-var cooldown = 0.17
+var cooldown = 0.16
 var time_left
 onready var map = get_parent().get_node("Floor")
 onready var tileset = map.tile_set
