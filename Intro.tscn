@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Textures/Intro.webm" type="VideoStream" id=1]
+[ext_resource path="res://Textures/Intro.ogv" type="VideoStream" id=1]
 [ext_resource path="res://Intro.gd" type="Script" id=2]
 
 [node name="Intro" type="Control"]
