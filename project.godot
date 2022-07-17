@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Core="*res://Core.gd"
+Music="*res://Music.tscn"
 
 [display]
 
